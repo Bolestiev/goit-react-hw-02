@@ -1,2 +1,8 @@
-.descriptionTitle {
+.descriptionWrapper {
+  margin: auto;
+  padding-left: 40px;
+}
+
+.descriptionItem {
+  font-weight: 500;
 }

@@ -1,21 +1,41 @@
 import React from "react";
 import s from "./Options.module.css";
 
-const Options = () => {
+const Options = ({ onLeaveFeedback, onReset, totalFeedback }) => {
   return (
     <ul className={s.buttonWrapper}>
       <li>
-        <button className={s.optionButton}>Good</button>
+        <button
+          className={s.optionButtonGood}
+          onClick={() => onLeaveFeedback("good")}
+        >
+          Good
+        </button>
       </li>
       <li>
-        <button className={s.optionButton}>Neutral</button>
+        <button
+          className={s.optionButtonNeutral}
+          onClick={() => onLeaveFeedback("neutral")}
+        >
+          Neutral
+        </button>
       </li>
       <li>
-        <button className={s.optionButton}>Bad</button>
+        <button
+          className={s.optionButtonBad}
+          onClick={() => onLeaveFeedback("bad")}
+        >
+          Bad
+        </button>
       </li>
-      <li>
-        <button className={s.optionButton}>Reset</button>
-      </li>
+
+      {totalFeedback > 0 && (
+        <li>
+          <button className={s.optionButtonReset} onClick={onReset}>
+            Reset
+          </button>
+        </li>
+      )}
     </ul>
   );
 };

@@ -1,23 +1,26 @@
 import React from "react";
 import s from "./Feedback.module.css";
 
-const Feedback = () => {
+const Feedback = ({ feedback, totalFeedback }) => {
+  const positiveFeedbackPercentage = Math.round(
+    (feedback.good / totalFeedback) * 100
+  );
   return (
     <ul className={s.listWrapper}>
       <li className={s.listStats}>
-        Good: <span></span>
+        Good: <span>{feedback.good}</span>
       </li>
       <li className={s.listStats}>
-        Neutral: <span></span>
+        Neutral: <span>{feedback.neutral}</span>
       </li>
       <li className={s.listStats}>
-        Bad: <span></span>
+        Bad: <span>{feedback.bad}</span>
       </li>
       <li className={s.listStats}>
-        Total: <span></span>
+        Total: <span>{totalFeedback}</span>
       </li>
       <li className={s.listStats}>
-        Positive: <span></span>
+        Positive: <span>{positiveFeedbackPercentage}%</span>
       </li>
     </ul>
   );
