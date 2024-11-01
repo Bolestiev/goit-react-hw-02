@@ -1,0 +1,8 @@
+.buttonWrapper {
+  display: flex;
+  list-style: none;
+  margin: auto;
+}
+.optionButton {
+  background-color: red;
+}
